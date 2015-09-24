@@ -22,7 +22,7 @@
 import itertools
 
 import numpy
-from nupic.bindings.math import (SM32 as SparseMatrix,
+from bindings.math import (SM32 as SparseMatrix,
                                  SM_01_32_32 as SparseBinaryMatrix,
                                  GetNTAReal,
                                  Random as NupicRandom)

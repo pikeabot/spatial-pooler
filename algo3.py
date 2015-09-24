@@ -23,11 +23,9 @@
 
 import numpy
 from random import randrange, random
-#from nupic.bindings.algorithms import SpatialPooler
-#from nupic.research.spatial_pooler import SpatialPooler
 from spatial_pooler import SpatialPooler
 import Image
-from nupic.bindings.math import (SM32 as SparseMatrix,
+from bindings.math import (SM32 as SparseMatrix,
                                  SM_01_32_32 as SparseBinaryMatrix,
                                  GetNTAReal,
                                  Random as NupicRandom)
