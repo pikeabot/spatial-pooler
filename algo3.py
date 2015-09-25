@@ -19,7 +19,12 @@
 # http://numenta.org/licenses/
 # ----------------------------------------------------------------------
 
-"""A simple program that demonstrates the working of the spatial pooler"""
+"""This program runs an augmented spatial pooler"""
+
+'''
+TODO:
+Test the script with more inputs and more complex images
+'''
 
 import numpy
 from random import randrange, random
@@ -34,13 +39,19 @@ from bindings.math import (SM32 as SparseMatrix,
 
 realDType = GetNTAReal()
 VERSION=2
+
+#this class extends the SpatialPooler class. So it still has access to the Spatial Pooler 
+#methods and variables, as well as its own methods 
+
 class AugmentedSpatialPooler(SpatialPooler):
 	def __init__(self, inputDimensions, columnDimensions):
 	    SpatialPooler.__init__(self, inputDimensions, columnDimensions)
 
+
 	def _calculateMeanInput(self, inputVector):
 		return numpy.ndarray.mean(inputVector)
 
+	# This is the equivalent of learnSynapseConnections
 	def _adaptSynapses2(self, inputVector, activeColumns):
 	    """
 	    The primary method in charge of learning. Adapts the permanence values of

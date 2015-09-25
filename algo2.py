@@ -19,7 +19,12 @@
 # http://numenta.org/licenses/
 # ----------------------------------------------------------------------
 
-"""A simple program that demonstrates the working of the spatial pooler"""
+"""This program runs a binary spatial pooler"""
+
+'''
+TODO:
+Test the script with more inputs and more complex images
+'''
 
 import numpy
 from random import randrange, random
@@ -81,11 +86,13 @@ inputVector[inputVector>0]=1
 
 img_list=[]
 
-#create a list of the sample patches to make the sets easy to run through
+#create a list of the sample patches to make the sets easy to run through. The numbers are random
+#and can be any size. The paper mentions 16x16 patches. 
 img_list.append(inputVector[0:16, 1:17])
 img_list.append(inputVector[125:141, 100:116])
 img_list.append(inputVector[153:169, 44:60])
 
+#this should be a much longer loop
 for i in range(0,3):
 	print "current loop: " + str(i)
 	run(img_list)  #run the calculateOverlap, inhibitColumns and learnSynapseConnections
